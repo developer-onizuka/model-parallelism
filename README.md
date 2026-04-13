@@ -157,10 +157,16 @@ $$
 各 GPU は通信を行わずに、手元のデータだけで行列演算を行う。この時点での計算結果を **部分和（Partial Sum）** と呼ぶ。
 
 #### GPU 0 の計算結果 ($Y_0$)
-$$Y_0 = 10 \times \begin{pmatrix} 1 & 2 \end{pmatrix} = \begin{pmatrix} 10 & 20 \end{pmatrix}$$
+
+$$
+Y_0 = 10 \times \begin{pmatrix} 1 & 2 \end{pmatrix} = \begin{pmatrix} 10 & 20 \end{pmatrix}
+$$
 
 #### GPU 1 の計算結果 ($Y_1$)
-$$Y_1 = 20 \times \begin{pmatrix} 3 & 4 \end{pmatrix} = \begin{pmatrix} 60 & 80 \end{pmatrix}$$
+
+$$
+Y_1 = 20 \times \begin{pmatrix} 3 & 4 \end{pmatrix} = \begin{pmatrix} 60 & 80 \end{pmatrix}
+$$
 
 > [!IMPORTANT]
 > この時点では、どちらの GPU も最終的な答え（70, 100）を持っておらず、データが断片化している状態。
@@ -171,6 +177,7 @@ $$Y_1 = 20 \times \begin{pmatrix} 3 & 4 \end{pmatrix} = \begin{pmatrix} 60 & 80 
 
 ### ステップ 1: Reduce (集約演算)
 全 GPU の部分和を要素ごとに足し合わせる。
+
 $$
 \begin{pmatrix} 10 & 20 \end{pmatrix} + \begin{pmatrix} 60 & 80 \end{pmatrix} = \begin{pmatrix} 70 & 100 \end{pmatrix}
 $$
