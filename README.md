@@ -182,13 +182,15 @@ $$
 #### GPU 1 の計算結果 ($Y_1$)
 
 $$
-Y_1 = 20 \times \begin{pmatrix} 3 & 4 \end{pmatrix} = \begin{pmatrix} 60 & 80 \end{pmatrix}
+Y_1 = 20 \times \begin{pmatrix} 
+3 & 4 \end{pmatrix} = \begin{pmatrix} 
+60 & 80 
+\end{pmatrix}
 $$
 
 > [!IMPORTANT]
 > この時点では、どちらの GPU も最終的な答え（70, 100）を持っておらず、データが断片化している状態。
 
----
 
 次のレイヤー（Layer Norm や FFN 等）の計算に進むためには、すべての GPU が「正しい合計値」を持っている必要があるため、ここでようやく **All-Reduce (SUM)** を実行することになる。
 
@@ -204,10 +206,20 @@ $$
 
 ### 最終ステータス
 **GPU 0:**
-$$ \begin{pmatrix} 70 & 100 \end{pmatrix} $$
+
+$$
+\begin{pmatrix} 
+70 & 100 
+\end{pmatrix} 
+$$
 
 **GPU 1:**
-$$ \begin{pmatrix} 70 & 100 \end{pmatrix} $$
+
+$$ 
+\begin{pmatrix} 
+70 & 100 
+\end{pmatrix} 
+$$
 
 これで、分散していた計算結果が完全に統合され、全 GPU が同じ値を持って次の処理へ進めるようになる。
 
