@@ -134,6 +134,13 @@ $$
 Z = \begin{pmatrix} 10 & 20 \end{pmatrix}, \quad W = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}
 $$
 
+$$
+\begin{pmatrix}
+a & b \\
+c & d
+\end{pmatrix}
+$$
+
 通常の一括計算（シングルGPU）では、結果 $Y$ は以下の通りとなる。
 
 $$
