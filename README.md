@@ -131,12 +131,11 @@ TransformerモデルのAttention機構において、出力投影行列（ $W_O$
 - **重み行列 $W$**: $2 \times 2$ 行列
 
 $$
-Z = \begin{pmatrix} 10 & 20 \end{pmatrix},
+Z = \begin{pmatrix} 10 & 20 \end{pmatrix}
 $$
 
 $$
 \quad W = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}
-\end{pmatrix}
 $$
 
 通常の一括計算（シングルGPU）では、結果 $Y$ は以下の通りとなる。
