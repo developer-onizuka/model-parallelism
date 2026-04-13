@@ -135,8 +135,8 @@ Z = \begin{pmatrix} 10 & 20 \end{pmatrix}, \quad W = \begin{pmatrix} 1 & 2 \\ 3 
 $$
 
 通常の一括計算（シングルGPU）では、結果 $Y$ は以下の通りとなる。
-$$
-Y = \begin{pmatrix} (10 \times 1 + 20 \times 3) & (10 \times 2 + 20 \times 4) \end{pmatrix} = \begin{pmatrix} 70 & 100 \end{pmatrix}
+$$ 
+Y = \begin{pmatrix} (10 \times 1 + 20 \times 3) & (10 \times 2 + 20 \times 4) \end{pmatrix} = \begin{pmatrix} 70 & 100 \end{pmatrix} 
 $$
 
 ---
