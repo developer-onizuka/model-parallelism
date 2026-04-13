@@ -187,10 +187,10 @@ $$
 
 ### 最終ステータス
 **GPU 0:**
-$$\begin{pmatrix} 70 & 100 \end{pmatrix}$$
+$$ \begin{pmatrix} 70 & 100 \end{pmatrix} $$
 
 **GPU 1:**
-$$\begin{pmatrix} 70 & 100 \end{pmatrix}$$
+$$ \begin{pmatrix} 70 & 100 \end{pmatrix} $$
 
 これで、分散していた計算結果が完全に統合され、全 GPU が同じ値を持って次の処理へ進めるようになる。
 
