@@ -163,7 +163,13 @@ $$
 
 ### GPU 1 の担当データ
 - **分割された入力**: $z_2 = 20$
-- **$W$ の 2 行目**: $W_{row1} = \begin{pmatrix} 3 & 4 \end{pmatrix}$
+- **$W$ の 2 行目**:
+
+$$
+W_{row1} = \begin{pmatrix}
+3 & 4
+\end{pmatrix}
+$$
 
 ---
 
