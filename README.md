@@ -295,8 +295,8 @@ python -m vllm.entrypoints.openai.api_server \
 | **`--model`** | 使用するLLMのパス、またはHugging Face上のモデルIDを指定。 | RAGの精度と推論速度のトレードオフを考慮し、現場の計算リソースに最適なパラメータサイズ（Llama 3 8B等）を選定。 |
 | **`--quantization`** | 量子化手法（AWQ, GPTQ等）を指定。 | **AWQ**を採用することで、VRAM消費を約半分に抑えつつ、FP16に近い精度を維持。限られたGPUリソースでの安定稼働を実現。 |
 | **`--dtype`** | 重みのデータ型（half, float, bfloat16等）を指定。 | `half`（FP16）を指定し、GPUのTensorコアを効率的に活用することで、スループットの最大化を図る。 |
-| **`--gpu-memory-utilization`** | GPUメモリの占有率（0.0〜1.0）を指定。デフォルトは0.9。 | 0.9（9割）を確保し、**PagedAttention**用のKVキャッシュ領域を確保。※ |
-| **`--max-model-len`** | モデルが許容する最大コンテキスト長（トークン数）を指定します。 | RAGにおいて検索結果をプロンプトに注入することを考慮し、VRAM容量の許す範囲で十分なコンテキスト長を確保。 |
+| **`--gpu-memory-utilization`** | GPUメモリの占有率（0.0〜1.0）を指定。デフォルトは0.9。 | GPUメモリ全体の９割をモデルパラメータや、**PagedAttention**用のKVキャッシュ領域として確保。※ |
+| **`--max-model-len`** | モデルが許容する最大コンテキスト長（トークン数）を指定。 | RAGにおいて検索結果をプロンプトに注入することを考慮し、VRAM容量の許す範囲で十分なコンテキスト長を確保。 |
 
 ※ GPUメモリが 100GB の場合、--gpu-memory-utilization 0.9 を指定すると、vLLMは約 90GB が確保される。その中身は以下の順で埋まっていくことになる。モデルの重み (Static Allocation):Attention行列 ($W_q, W_k, W_v, W_o$) や FFN行列のパラメータとなる。
 
