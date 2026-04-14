@@ -301,6 +301,7 @@ python -m vllm.entrypoints.openai.api_server \
 GPUメモリが 100GB の場合、--gpu-memory-utilization 0.9 を指定すると、vLLMは約 90GB が確保される。その中身は以下の順で埋まっていくことになる。モデルの重み (Static Allocation):Attention行列 ($W_q, W_k, W_v, W_o$) や FFN行列のパラメータとなる。
 
 例：Llama-3-8B を AWQ (4-bit) でロードする場合、約 5GB 程度がパラメータにより占有される。KVキャッシュ領域は、90GB からモデルの 5GB を引いた 85GB がすべてKVキャッシュ用のプールとして予約されることになる。
+<br>
 
 # 4. Vertex AIでの実装
 ### 4-1. 並列化
